@@ -4,6 +4,6 @@
 
 <i>This is a fan run FTL13 server that is not directly associated with the FTL13 team. It may not be representative of the quality of their work or the stability of their servers.</i>
 
-<i>This server is currently undergoing development and experimental hosting/deployment procedures. Due to this, you may experience brief interruptions of service, or extended unannounced downtimes.</i>
+<i>This server is currently undergoing development and experimental hosting/deployment procedures. Due to this, you may experience brief interruptions of service or extended unannounced downtimes.</i>
 
 <i>If you run into any problems please feel free to reach out to the host, Crossedfall#1001 on Discord.</i> 
