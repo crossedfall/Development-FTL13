@@ -195,3 +195,5 @@ Temporary Items
 
 #GitHub Atom
 .atom-build.json
+config/config.txt
+config/dbconfig.txt
