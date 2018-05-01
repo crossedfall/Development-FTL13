@@ -210,7 +210,7 @@
 
 	var/allowed_shuttles = 0
 	var/dock_do_not_show = TRUE
-	var/use_dock_distance = FALSE
+	var/use_dock_distance = FALSE //might be undeeded
 	var/dock_distance = 0
 
 /obj/docking_port/stationary/New()
@@ -390,7 +390,6 @@
 	else
 		var/msg = "Shuttle [src] cannot dock at [S], error: [status]"
 		message_admins(msg)
-		cancel()
 		return FALSE
 
 /obj/docking_port/mobile/proc/transit_failure()
@@ -423,11 +422,9 @@
 		if(SHUTTLE_IDLE, SHUTTLE_IGNITING)
 			destination = S
 			mode = SHUTTLE_IGNITING
+			var/obj/docking_port/stationary/P = get_docked()
 			if(S.use_dock_distance)
-				var/obj/docking_port/stationary/fob/P = get_docked()
-				if(P.current_planet != SSstarmap.current_planet && istype(S,/obj/docking_port/stationary/fob/fob_dock))
-					callTime = default_call_time*2 //Double time due to returning via bluespace tether
-				else if(S.dock_distance != P.dock_distance)
+				if(S.dock_distance != P.dock_distance)
 					callTime = default_call_time * abs(S.dock_distance - P.dock_distance) / 100
 				else
 					callTime = default_call_time / 10 //Short time due to same location
@@ -815,7 +812,7 @@
 			dst = previous
 		else
 			dst = destination
-		. += " towards [dst ? dst.name : "unknown location"] ([timeLeft(10)] seconds)"
+		. += " towards [dst ? dst.name : "unknown location"] ([timeLeft(600)] minutes)"
 
 
 // attempts to locate /obj/machinery/computer/shuttle with matching ID inside the shuttle

@@ -510,10 +510,6 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Cargo"
 	icon_state = "quart"
 
-/area/shuttle/ftl/cargo/shuttle
-	name = "Cargo Shuttle"
-	icon_state = "quart"
-
 /area/shuttle/ftl/cargo/office
 	name = "Cargo Office"
 	icon_state = "quartoffice"

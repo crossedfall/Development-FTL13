@@ -104,7 +104,7 @@
 		no_unload_reason = ""
 		return 0
 
-	if(no_unload_reason != "") //Anything in no_unload_reason, keep it loaded
+	if(no_unload_reason == "FOB SHUTTLE")
 		return 0
 
 	if(!main_dock)

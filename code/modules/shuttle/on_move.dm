@@ -401,28 +401,21 @@ All ShuttleMove procs go here
 
 /obj/docking_port/mobile/fob/afterShuttleMove(list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir)
 	. = ..()
-	if(!istype(get_docked(),/obj/docking_port/stationary/transit))//Keep the planet loaded, don't bother if its transit a transit dock
-		var/obj/docking_port/stationary/fob/destination_dock = get_docked()
+	//Keep the planet loaded
+	var/obj/docking_port/stationary/fob/fob_land/destination_dock = get_docked()
+	if(destination_dock.name == "FOB Landing Zone")
 		var/datum/planet/planet = destination_dock.current_planet
-		if(planet.no_unload_reason == "")
-			planet.no_unload_reason = unload_marker
-		else if(planet.no_unload_reason == "FOB SHUTTLE" || planet.no_unload_reason == "CARGO SHUTTLE")
-			if(planet.no_unload_reason != unload_marker)
-				planet.no_unload_reason = "BOTH SHUTTLES"
+		planet.no_unload_reason = "FOB SHUTTLE"
+		return
 
 	//Unload the planet
-	var/obj/docking_port/stationary/fob/old_dock = previous_dock
-	if(istype(old_dock,/obj/docking_port/stationary/transit))
+	var/obj/docking_port/stationary/fob/fob_land/old_dock = previous_dock
+	if(old_dock.name != "FOB Landing Zone")
 		return
-	if(old_dock.current_planet)
-		var/datum/planet/old_planet = old_dock.current_planet
-		if(old_planet.no_unload_reason == unload_marker) //same as us, safe to unmark
-			old_planet.no_unload_reason = ""
-		else if(old_planet.no_unload_reason == "BOTH SHUTTLES")
-			if(unload_marker == "FOB_SHUTTLE")
-				old_planet.no_unload_reason = "CARGO SHUTTLE"
-			else
-				old_planet.no_unload_reason = "FOB SHUTTLE"
+	var/datum/planet/old_planet = old_dock.current_planet
+	if(old_planet.no_unload_reason == "FOB SHUTTLE")
+		old_planet.no_unload_reason = ""
+		//old_planet.do_unload()
 
 /obj/docking_port/stationary/public_mining_dock/onShuttleMove(turf/newT, turf/oldT, rotation, list/movement_force, move_dir, old_dock)
 	id = "mining_public" //It will not move with the base, but will become enabled as a docking point.

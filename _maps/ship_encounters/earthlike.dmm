@@ -8,8 +8,8 @@
 "c" = (
 /turf/open/floor/plating/asteroid/planet/genturf,
 /area/lavaland/surface/outdoors/unexplored)
-"H" = (
-/obj/effect/landmark/dock_spawn/land,
+"f" = (
+/obj/docking_port/stationary/fob/fob_land,
 /turf/open/floor/plating/asteroid/planet/genturf,
 /area/lavaland/surface/outdoors/unexplored)
 
@@ -32120,7 +32120,7 @@ c
 c
 c
 c
-H
+f
 c
 c
 c
