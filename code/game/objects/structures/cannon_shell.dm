@@ -71,7 +71,11 @@
 
 	casing = /obj/item/weapon/twohanded/required/shell_casing/shield_piercing
 
-	attack_data = /datum/ship_attack/shield_buster
+	attack_data = /datum/ship_attack/shield_penetrator
+
+	dev_dmg = 1
+	heavy_dmg = 2
+	light_dmg = 6
 
 	dev_dmg = 1
 	heavy_dmg = 2
