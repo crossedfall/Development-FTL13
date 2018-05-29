@@ -143,7 +143,9 @@ SUBSYSTEM_DEF(starmap)
 			else if(in_transit_planet)
 				current_planet = to_planet
 			if(current_system.name == "Dolos") //Syndie cap
-				message_admins("The ship has just arrived at Dolos!")
+				SSship.ship_combat_log_spam = FALSE
+				log_admin("The ship has just arrived at Dolos! Combat log spam turned off.")
+				message_admins("The ship has just arrived at Dolos! Combat log spam turned off")
 				ftl_sound(dolos_entry_sound,30)
 			ftl_sound('sound/effects/hyperspace_end.ogg')
 			SSmapping.fake_ftl_change(FALSE)
