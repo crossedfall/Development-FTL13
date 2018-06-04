@@ -142,7 +142,7 @@ SUBSYSTEM_DEF(starmap)
 				current_planet = current_system.planets[1]
 			else if(in_transit_planet)
 				current_planet = to_planet
-			if(current_system.name == "Dolos") //Syndie cap
+			if(istype(current_system,/datum/star_system/capital/syndicate)) //Syndie cap
 				SSship.ship_combat_log_spam = FALSE
 				log_admin("The ship has just arrived at Dolos! Combat log spam turned off.")
 				message_admins("The ship has just arrived at Dolos! Combat log spam turned off")
@@ -222,7 +222,7 @@ SUBSYSTEM_DEF(starmap)
 	from_system = current_system
 	from_time = world.time + 40
 	to_system = target
-	if(to_system.name == "Dolos") //Syndie cap
+	if(istype(to_system,/datum/star_system/capital/syndicate)) //Syndie cap
 		message_admins("The ship has just started a jump to Dolos!!")
 	to_time = world.time + 1850
 	current_system = null
