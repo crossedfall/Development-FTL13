@@ -187,7 +187,10 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	world.sleep_offline = 1
 	world.fps = config.fps
 	var/initialized_tod = REALTIMEOFDAY
+	
+	world.TgsInitializationComplete()
 	sleep(1)
+	
 	initializations_finished_with_no_players_logged_in = initialized_tod < REALTIMEOFDAY - 10
 	// Loop.
 	Master.StartProcessing(0)

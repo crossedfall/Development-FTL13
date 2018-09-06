@@ -23,6 +23,8 @@
 
 	make_datum_references_lists()	//initialises global lists for referencing frequently used datums (so that we only ever do it once)
 
+	TgsNew()
+
 	config = new
 
 	CheckSchemaVersion()
@@ -43,6 +45,7 @@
 	GLOB.timezoneOffset = text2num(time2text(0,"hh")) * 36000
 
 	Master.Initialize(10, FALSE)
+
 
 	if(config.irc_announce_new_game)
 		IRCBroadcast("New round starting on [SSmapping.config.map_name]!")
@@ -107,6 +110,8 @@
 		log_game("Round ID: [GLOB.round_id]")
 
 /world/Topic(T, addr, master, key)
+	TGS_TOPIC
+
 	var/list/input = params2list(T)
 
 	var/pinging = ("ping" in input)
@@ -237,6 +242,7 @@
 		C.AnnouncePR(final_composed)
 
 /world/Reboot(reason = 0, fast_track = FALSE)
+	TgsReboot()
 	ServiceReboot() //handles alternative actions if necessary
 	if (reason || fast_track) //special reboot, do none of the normal stuff
 		if (usr)
