@@ -51,6 +51,7 @@
 
 /world/proc/TgsTopic(T)
 	var/datum/tgs_api/api = TGS_READ_GLOBAL(tgs)
+	log_admin("Pre-API check")
 	if(api)
 		log_admin("result set (core)")
 		var/result = api.OnTopic(T)
