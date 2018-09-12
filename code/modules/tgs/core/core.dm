@@ -52,10 +52,10 @@
 /world/proc/TgsTopic(T)
 	var/datum/tgs_api/api = TGS_READ_GLOBAL(tgs)
 	if(api)
-		message_admins("result set (core)")
+		log_admin("result set (core)")
 		var/result = api.OnTopic(T)
 		if(result != TGS_UNIMPLEMENTED)
-			message_admins("TGS implimented and retuning result (core)")
+			log_admin("TGS implimented and retuning result (core)")
 			return result
 
 /world/TgsRevision()
