@@ -50,13 +50,13 @@
 		api.OnInitializationComplete()
 
 /world/proc/TgsTopic(T)
-	log_admin("Pre-API check")
+	TGS_INFO_LOG("Pre-API check")
 	var/datum/tgs_api/api = TGS_READ_GLOBAL(tgs)
 	if(api)
-		log_admin("result set (core)")
+		TGS_INFO_LOG("result set (core)")
 		var/result = api.OnTopic(T)
 		if(result != TGS_UNIMPLEMENTED)
-			log_admin("TGS implimented and retuning result (core)")
+			TGS_INFO_LOG("TGS implimented and retuning result (core)")
 			return result
 
 /world/TgsRevision()
