@@ -96,8 +96,8 @@
 	return TRUE
 
 /datum/tgs_api/v3210/OnTopic(T)
-	var/list/params = params2list(T)
 	log_admin("OnTopic called")
+	var/list/params = params2list(T)
 	var/their_sCK = params[SERVICE_CMD_PARAM_KEY]
 	if(!their_sCK)
 		log_admin("Returned false")
