@@ -96,26 +96,26 @@
 	return TRUE
 
 /datum/tgs_api/v3210/OnTopic(T)
-	log_admin("OnTopic called")
+	TGS_INFO_LOG("OnTopic called")
 	var/list/params = params2list(T)
 	var/their_sCK = params[SERVICE_CMD_PARAM_KEY]
 	if(!their_sCK)
-		log_admin("Returned false")
+		TGS_INFO_LOG("Returned false")
 		return FALSE	//continue world/Topic
 
 
 	if(their_sCK != comms_key)
-		log_admin("Invalid comms key")
+		TGS_INFO_LOG("Invalid comms key")
 		return "Invalid comms key!";
 
 	var/command = params[SERVICE_CMD_PARAM_COMMAND]
 	if(!command)
-		log_admin("No command!")
+		TGS_INFO_LOG"No command!")
 		return "No command!"
 
 	switch(command)
 		if(SERVICE_CMD_API_COMPATIBLE)
-			log_admin("API Compatible check passed")
+			TGS_INFO_LOG("API Compatible check passed")
 			return SERVICE_RETURN_SUCCESS
 		if(SERVICE_CMD_HARD_REBOOT)
 			if(reboot_mode != REBOOT_MODE_HARD)
