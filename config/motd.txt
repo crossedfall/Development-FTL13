@@ -1,5 +1,17 @@
 <!-- Most valid html will work in here, excluding images. -->
 
-<h1>Welcome to Space Station 13!</h1>
+<h1>Welcome to FTL13!</h1>
 
-<i>This server is running a /tg/station 13 Git build.</i>
+<i>Read the god damn rules, not knowing them is <b>not</b> a valid excuse for not following them: http://ftl13.com/rules.php</i>
+
+Welcome to FTL13! We're a MRP /tg/-code shootoff that focuses on PvE and external conflict. The crew traverses the universe on a movable ship that can fight off enemy ships, land on planets, and much more.
+
+If you encounter bugs, do not be alarmed, since we are in an Alpha state. Encountering and reporting bugs helps to increase the game experience and make it more enjoyable in the future.
+
+If you have any questions feel free to ask our staff via adminhelp or OOC. Our Discord and wiki links are below:
+
+Main Page: http://ftl13.com
+Wiki: https://ftl13.com/wiki/index.php?title=Main_Page
+Discord: http://discord.me/ftl13/
+
+Thank you for joining us and enjoy the game!
